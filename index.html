@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <title>Portafolio</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav main-nav">
+        <ul class="main-nav__list main-list">
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#home">HOME</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#about">ACERCA DE MI</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#skills">MIS ABILIDADES</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <!-- Vista previa -->
+      <section class="main__home home" id="home">
+        <h1 class="home__title">NAME SURNAME</h1>
+        <p class="home__subtitle">WEB-DEVELOPER, PYTHON PROGRAMMER</p>
+      </section>
+      <!-- Acerca de mí -->
+      <section class="main__about about" id="about">
+        <h2 class="about__title">SOBRE MI</h2>
+        <div class="about__info info-block">
+          <p class="info-block__text">
+            Hola, soy kevin un adolecente de 12 años, me gusta progamar como
+            tambien jugar video juegos y patinar, actual mente estoy
+            progamando paginas web y estoy cursando el 2do año de
+            secundaria.
+          </p>
+          <img
+            class="info-block__img"
+            src="../static/img/kev.jpg"
+            alt="me"
+            width="250"
+            height="250"
+          />
+        </div>
+      </section>
+      <!-- Sección de competencias -->
+      <section class="main__skills skills" id="skills">
+        <h2 class="skills__title">MIS ABILIDADES</h2>
+        <form action="/" method="POST">
+          <ul class="skills__list skills-list">
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/python.png"
+                alt="python"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Este proyecto es una calculadora que verifica si el uso de energia es adecuado o no</span>
+              <input class="skill__button" type="submit" name="button_python" value="SHOW PROJECT">
+            </li>
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/discord.png"
+                alt="discord"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Este proyecto es un bot de discor que ayuda a ser ecologicos a los niños</span>
+              <input class="skill__button" type="submit" name="button_discord" value="SHOW PROJECT">
+            </li>
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/html.png"
+                alt="html"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Este proyecto es un generador de memes</span>
+              <input class="skill__button" type="submit" name="button_html" value="SHOW PROJECT">
+            </li>
+            <li class="skills-list__skill skill">
+              <img
+                class="skill__img"
+                src="../static/img/db.webp"
+                alt="SQL"
+                width="150"
+                height="150"
+              />
+              <span class="skill__info">Este proyecto es un almacen de datos y se usa en el inicio de secion y en el diario</span>
+              <input class="skill__button" type="submit" name="button_db" value="SHOW PROJECT">
+            </li>
+          </ul>
+        </form>
+        {% if button_python%}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="../static/img/python-project.png" alt="project" width="500">
+              <a class="project__link" href="https://github.com/kodlandkev/megweb.git">Abierto en GitHub</a>
+          </div>
+        {% endif %}
+        {% if button_discord%}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="../static/img/imagen1.png" alt="project" width="500">
+              <a class="project__link" href="https://github.com/kodlandkev/eco.git">Abierto en GitHub</a>
+          </div>
+        {% endif %}
+        {% if button_html%}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="../static/img/mem.png" alt="project" width="500">
+              <a class="project__link" href="https://github.com/kodlandkev/generador-de-memes.git">Abierto en GitHub</a>
+          </div>
+        {% endif %}
+        {% if button_db%}
+          <div class="skills__project project" id="project">
+              <img class="project__img" src="../static/img/datos.png" alt="project" width="500">
+              <a class="project__link" href="https://github.com/kodlandkev/diario.git">Abierto en GitHub</a>
+          </div>
+        {% endif %}
+      </section>
+      <!-- Formulario de contacto -->
+      <section class="main__feedback feedback" id="feedback">
+        <h2 class="feedback__title">COMENTARIO</h2>
+        <form action="" method="POST" class="feedback__form form">
+          <label for="email">
+            <input type="email" class="form__input" name="email" id="email" placeholder="Correo electronico" required>
+          </label>
+          <label for="text">
+            <textarea name="text" class="form__input" id="text" cols="70" rows="10" required placeholder="Comentario"></textarea>
+          </label>
+          <button class="form__button" type="submit">ENVIAR</button>
+        </form>
+      </section>
+    </main>
+    <!-- Pie de página con enlaces a redes sociales -->
+    <footer>
+      <p>correo electronico: olmoskevin987@gmail.com</p>
+    </footer>
+  </body>
+</html>
